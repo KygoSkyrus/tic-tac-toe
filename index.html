@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>tic-tac-toe</title>
+</head>
+<body> 
+    
+    <h1>Tic-Tac-Toe</h1>
+
+    <main class="jcc-aic">
+
+        <div class="choice jcc-aic">
+            <p>Choose</p>
+            <div class="switch-field">
+                <input type="radio" id="x" name="switch-one" value="X" onclick="xoro()" />
+                <label for="x">X</label>
+                <input type="radio" id="o" name="switch-one" value="O" onclick="xoro()" />
+                <label for="o">O</label>
+            </div>
+            <div class="btn-holder jcc-aic">
+                <button id='begin'>PLAY</button>
+            </div>
+        </div>
+
+
+       
+
+        <div class="grid">
+            <section id="1" class="cell"></section>
+            <section id="2" class="cell"></section>
+            <section id="3" class="cell"></section>
+            <section id="4" class="cell"></section>
+            <section id="5" class="cell"></section>
+            <section id="6" class="cell"></section>
+            <section id="7" class="cell"></section>
+            <section id="8" class="cell"></section>
+            <section id="9" class="cell"></section>
+        </div>
+
+        <h3 id="status"></h3>
+
+        <div class="btn-holder jcc-aic">
+             <button type="button "  id='restart'>PLAY AGAIN</button>
+        </div>
+       
+
+
+    </main>
+    <p class="by">by kygoskyrus</p>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
