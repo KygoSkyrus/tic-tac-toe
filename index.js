@@ -1,5 +1,5 @@
 var currentplayer;
-var arr = [];
+
 const choice = document.querySelector('.choice');
 const ree = document.getElementById('restart');
 const begin = document.getElementById('begin');
@@ -18,7 +18,6 @@ var result = document.getElementById('status');
 
 //restart
 ree.addEventListener('click', restart);
-
 function restart() {
     choice.style.display = "flex";
     one.innerHTML = "";
@@ -30,32 +29,24 @@ function restart() {
     seven.innerHTML = "";
     eight.innerHTML = "";
     nine.innerHTML = "";
-    
-    document.getElementById('x').getAttribute.checked="false";
-    document.getElementById('x').getAttribute.checked="false";
-
-
-   console.log(document.getElementById('x').getAttribute.checked);
-  //  currentplayer="";
-
+    xoro();
 }
 
+//begin aka PLAY button
+begin.addEventListener('click', function () {
+    choice.style.display = "none";
+});
 
 function xoro() {
-
+    var arr = [];
     //choosing players from switch buttons
     if (document.getElementById('x').checked) {
         currentplayer = "X";
-        result.innerHTML="X will play first move";
+        result.innerHTML = "X will play first move";
     } else {
         currentplayer = "O";
-        result.innerHTML="O will play first move";
+        result.innerHTML = "O will play first move";
     }
-
-    //begin aka start button
-    begin.addEventListener('click', function () {
-        choice.style.display = "none";
-    });
 
     //eventlistener when square is clicked
     const sec = document.querySelectorAll('.cell');
@@ -111,6 +102,8 @@ function xoro() {
             (three.innerHTML === "O" && five.innerHTML === "O" && seven.innerHTML === "O")) {
             rmvEVENTlistener();
             result.innerHTML = "O has won";
+        } else if (arr.length == 9) {
+            result.innerHTML = "Draw";
         }
     }
 }
