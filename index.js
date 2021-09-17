@@ -38,7 +38,6 @@ begin.addEventListener('click', function () {
 });
 
 function xoro() {
-    var arr = [];
     //choosing players from switch buttons
     if (document.getElementById('x').checked) {
         currentplayer = "X";
@@ -68,7 +67,6 @@ function xoro() {
                 currentplayer = "O";
                 result.innerHTML = "its O's turn";
             }
-            arr.push(atttrvalue);
             checkifwon();
         } else {
             if (document.getElementById(atttrvalue).innerHTML == '') {
@@ -76,7 +74,6 @@ function xoro() {
                 currentplayer = "X";
                 result.innerHTML = "its X's turn";
             }
-            arr.push(atttrvalue);
             checkifwon();
         }
     }
@@ -102,7 +99,9 @@ function xoro() {
             (three.innerHTML === "O" && five.innerHTML === "O" && seven.innerHTML === "O")) {
             rmvEVENTlistener();
             result.innerHTML = "O has won";
-        } else if (arr.length == 9) {
+        } else if (one.innerHTML !== "" && two.innerHTML !== "" && three.innerHTML !== "" &&
+            four.innerHTML !== "" && five.innerHTML !== "" && six.innerHTML !== "" &&
+            seven.innerHTML !== "" && eight.innerHTML !== "" && nine.innerHTML !== "") {
             result.innerHTML = "Draw";
         }
     }
